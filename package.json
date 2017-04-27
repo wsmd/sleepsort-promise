@@ -16,7 +16,7 @@
     "test": "jest",
     "test:dev": "jest --watch --verbose",
     "build": "rollup -c",
-    "prepublish": "y run build"
+    "prepublish": "yarn run build"
   },
   "jest": {
     "testPathIgnorePatterns": [
