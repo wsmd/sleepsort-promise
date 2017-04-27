@@ -1,8 +1,16 @@
 import sort from './sort';
 
+const UNDEFINED = 'undefined';
+
 function sleepSort(numbers, callback) {
-  const supportsPromise = typeof window.Promise !== 'undefined';
-  const providedCallback = typeof callback !== 'undefined';
+  const providedCallback = typeof callback !== UNDEFINED
+
+  let supportsPromise;
+  if (typeof global !== UNDEFINED) {
+    if (global.Promise) { supportsPromise = true }
+  } else if (typeof window !== UNDEFINED) {
+    if (window.Promise) { supportsPromise = true }
+  }
 
   if (!supportsPromise && !providedCallback) {
     throw new Error(
