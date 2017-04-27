@@ -1,7 +1,7 @@
 import sleepSort from '../src';
 
 const NUMBERS = [3, 10, 6, 7, 100, 4, 25];
-const SORTED = [ 3, 4, 6, 7, 10, 25, 100 ];
+const SORTED = [3, 4, 6, 7, 10, 25, 100];
 
 const PROMISE = window.Promise;
 
