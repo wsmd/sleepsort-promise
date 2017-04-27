@@ -1,0 +1,38 @@
+{
+  "name": "sleepsort-promise",
+  "version": "1.0.0",
+  "description": "A Promise based implementation of Sleepsort, an O(wtf) sorting algorithm",
+  "keywords": [
+    "sleepsort",
+    "algorithm",
+    "promise",
+    "sorting-algorithm",
+    "sort"
+  ],
+  "author": "Waseem Dahman <dwaseem@icloud.com>",
+  "repository": "https://github.com/wsmd/sleepsort-promise.git",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:dev": "jest --watch --verbose",
+    "build": "rollup -c",
+    "prepublish": "y run build"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist"
+    ]
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "jsnext:main": "dist/index.module.js",
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-env": "^1.4.0",
+    "jest-cli": "^19.0.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-watch": "^3.2.2"
+  }
+}
