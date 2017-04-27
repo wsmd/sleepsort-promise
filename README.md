@@ -1,6 +1,6 @@
 # sleepsort-promise
 
-![](https://travis-ci.org/wsmd/sleepsort-promise.svg?branch=master)
+[![Build Status](https://travis-ci.org/wsmd/sleepsort-promise.svg?branch=master)](https://travis-ci.org/wsmd/sleepsort-promise)
 
 A `Promise` based implementation of the [sleepsort](https://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort) algorithim.
 
