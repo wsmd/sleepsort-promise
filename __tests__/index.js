@@ -14,11 +14,8 @@ describe('sleepsort', () => {
   });
 
   it('sorts numbers using a callback', (done) => {
-    window.Promise = undefined; // overwriting promise
-
     function callback(numbers) {
       expect(SORTED).toEqual(numbers);
-      window.Promise = PROMISE; // restore promise
       done();
     }
 

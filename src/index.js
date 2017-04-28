@@ -3,7 +3,7 @@ import sort from './sort';
 const UNDEFINED = 'undefined';
 
 function sleepSort(numbers, callback) {
-  const providedCallback = typeof callback !== UNDEFINED
+  const providedCallback = typeof callback === 'function';
 
   let supportsPromise;
   if (typeof global !== UNDEFINED) {
@@ -19,13 +19,12 @@ function sleepSort(numbers, callback) {
     )
   }
 
-  if (supportsPromise) {
-    return new Promise((resolve, reject) => {
-      sort(numbers, resolve);
-    })
+  if (providedCallback) {
+    return sort(numbers, callback);
   }
-
-  return sort(numbers, callback);
+  return new Promise((resolve, reject) => {
+    sort(numbers, resolve);
+  })
 }
 
 export default sleepSort;
