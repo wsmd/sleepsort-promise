@@ -1,7 +1,5 @@
 import sort from './sort';
 
-const FUNCTION = 'function';
-
 function sleepSort(numbers, callback) {
   if (!Array.isArray(numbers)) {
     throw new TypeError(
@@ -10,8 +8,17 @@ function sleepSort(numbers, callback) {
     )
   }
 
-  const supportsPromise = typeof global.Promise === FUNCTION;
-  const providedCallback = typeof callback === FUNCTION;
+  const providedCallback = typeof callback === 'function';
+
+  let supportsPromise;
+  /* istanbul ignore else  */
+  if (typeof global !== 'undefined') {
+    if (global.Promise) { supportsPromise = true }
+  } else if (typeof window !== 'undefined') {
+    if (window.Promise) { supportsPromise = true }
+  } else if (typeof self !== 'undefined') {
+    if (self.Promise) { supportsPromise = true }
+  }
 
   if (!supportsPromise && !providedCallback) {
     throw new Error(
@@ -23,6 +30,7 @@ function sleepSort(numbers, callback) {
   if (providedCallback) {
     return sort(numbers, callback);
   }
+
   return new Promise((resolve) => {
     sort(numbers, resolve);
   })

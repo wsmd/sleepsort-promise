@@ -21,7 +21,7 @@ describe('sleepSort', () => {
   describe('throws an error when', () => {
     test('not providing callback and Promise not supported', () => {
       const realPromise = window.Promise;
-      Object.defineProperty(global, 'Promise', { value: {} });
+      Object.defineProperty(global, 'Promise', { value: undefined });
       try {
         expect(() => sleepSort(NUMBERS)).toThrowError(Error);
       } finally {

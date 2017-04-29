@@ -19,7 +19,7 @@ const config = {
   targets: [{
     dest: info.main,
     format: 'umd',
-    moduleName: 'sleepsort-promise'
+    moduleName: 'sleepSort'
   }, {
     dest: info.module,
     format: 'es'
