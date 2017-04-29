@@ -16,9 +16,11 @@
     "test": "jest",
     "test:dev": "jest --watch --verbose",
     "build": "rollup -c",
-    "prepublish": "yarn run build"
+    "prepublish": "yarn run build",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
+    "collectCoverage": true,
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/dist"
@@ -30,6 +32,7 @@
   "devDependencies": {
     "babel-jest": "^19.0.0",
     "babel-preset-env": "^1.4.0",
+    "coveralls": "^2.13.1",
     "jest-cli": "^19.0.2",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
