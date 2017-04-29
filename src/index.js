@@ -1,20 +1,21 @@
 import sort from './sort';
 
-const UNDEFINED = 'undefined';
+const FUNCTION = 'function';
 
 function sleepSort(numbers, callback) {
-  const providedCallback = typeof callback === 'function';
-
-  let supportsPromise;
-  if (typeof global !== UNDEFINED) {
-    if (global.Promise) { supportsPromise = true }
-  } else if (typeof window !== UNDEFINED) {
-    if (window.Promise) { supportsPromise = true }
+  if (!Array.isArray(numbers)) {
+    throw new TypeError(
+      '[SleepSort] Expected to be called with an array of numbers as an but ' +
+      `instead received ${numbers === null ? 'null' : typeof numbers}.`
+    )
   }
+
+  const supportsPromise = typeof global.Promise === FUNCTION;
+  const providedCallback = typeof callback === FUNCTION;
 
   if (!supportsPromise && !providedCallback) {
     throw new Error(
-      'sleepsort: Your browser does not support Promises. Please provide a' +
+      '[SleepSort] Your browser does not support Promises. Please provide a' +
       'callback as a second argument.'
     )
   }
@@ -22,7 +23,7 @@ function sleepSort(numbers, callback) {
   if (providedCallback) {
     return sort(numbers, callback);
   }
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     sort(numbers, resolve);
   })
 }

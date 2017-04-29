@@ -1,4 +1,9 @@
 function sort(numbers, callback) {
+  if (numbers.length <= 1) {
+    callback(numbers);
+    return;
+  }
+
   const sorted = [];
 
   numbers.forEach((number) => {

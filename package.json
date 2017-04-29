@@ -1,6 +1,6 @@
 {
   "name": "sleepsort-promise",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Promise based implementation of Sleepsort, an O(wtf) sorting algorithm",
   "keywords": [
     "sleepsort",
