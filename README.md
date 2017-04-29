@@ -1,19 +1,19 @@
 # sleepsort-promise
 
+[![npm version](https://badge.fury.io/js/sleepsort-promise.svg)](https://badge.fury.io/js/sleepsort-promise)
 [![Build Status](https://travis-ci.org/wsmd/sleepsort-promise.svg?branch=master)](https://travis-ci.org/wsmd/sleepsort-promise)
+[![Coverage Status](https://coveralls.io/repos/github/wsmd/sleepsort-promise/badge.svg?branch=master)](https://codecov.io/gh/wsmd/sleepsort-promise)
 
-A `Promise` based implementation of the [sleepsort](https://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort) algorithim.
-
+A `Promise` based implementation of the [sleepsort](https://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort) algorithm.
 
 ## Installation
 
-```
+```bash
 npm install --save sleepsort-promise
 ```
-
-## Why `sleepsort-promise`?
-
-Because why not.
+```bash
+yarn add sleepsort-promise
+```
 
 ## Usage
 
@@ -25,7 +25,7 @@ const numbers = [3, 10, 6, 7, 100, 4, 25];
 sleepSort(numbers)
   .then((sortedNumbers) => {
     console.log(sortedNumbers); // outputs: [3, 4, 6, 7, 10, 25, 100]
-  })
+  });
 ```
 
 In case `Promise` is not supported by your browser, you can alternatively use a callback.
@@ -35,6 +35,14 @@ sleepSort(numbers, function(sortedNumbers) {
   console.log(sortedNumbers); // outputs: [3, 4, 6, 7, 10, 25, 100]
 });
 ```
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request
 
 ## License
 
