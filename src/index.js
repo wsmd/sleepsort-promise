@@ -3,7 +3,7 @@ import sort from './sort';
 function sleepSort(numbers, callback) {
   if (!Array.isArray(numbers)) {
     throw new TypeError(
-      '[SleepSort] Expected to be called with an array of numbers but' +
+      '[SleepSort] Expected to be called with an array of numbers but ' +
       `instead received ${numbers === null ? 'null' : typeof numbers}.`
     )
   }
